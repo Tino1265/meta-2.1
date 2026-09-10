@@ -3,21 +3,37 @@
     <thead>
       <tr>
         <th class="text-left">
-          Name
+          Categoria
         </th>
         <th class="text-left">
-          Calories
+          Valor
+        </th>
+        <th class="text-left">
+          Estado
         </th>
       </tr>
     </thead>
     <tbody>
-      <tr
-        v-for="item in desserts"
-        :key="item.name"
-      >
-        <td>{{ item.name }}</td>
-        <td>{{ item.calories }}</td>
-      </tr>
+      <tr>
+        <td>Matricula</td> 
+        <td>1190622</td>
+        <td>Activo</td>
+    </tr>
+    <tr>
+        <td>Carrera</td> 
+        <td>Ingenieria en computacion</td>
+        <td>activo</td>
+    </tr>
+    <tr>
+        <td>Promedio</td> 
+        <td>9.0</td>
+        <td>General</td>
+    </tr>
+    <tr>
+        <td>Correo</td> 
+        <td>juventino.ramos@uabc.edu.mx</td>
+        <td>Verificado</td>
+    </tr>
     </tbody>
   </v-table>
 </template>
