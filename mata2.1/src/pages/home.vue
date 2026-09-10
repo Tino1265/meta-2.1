@@ -14,10 +14,22 @@
       :autor="autor2" 
     />
   </v-container>
+  <v-container class="max-w-md mx-auto">
+    <v-alert
+      v-model="error"
+      title="Error de conexión"
+      text="No se pudieron cargar las imágenes de la API. Inténtalo de nuevo."
+      closable
+      class="my-1 bg-red-600 text-white"
+    ></v-alert>
+  </v-container>
   <div class="flex justify-center m-10">
     <v-btn :loading="cargando" :disabled="cargando" @click="ObtenerImagenes">
         Cambiar
     </v-btn>
+  </div>
+  <div class=" max-w-7xl w-11/12 my-3 mx-auto">
+    <Table/>
   </div>
   <Footer/>
 </template>
@@ -25,6 +37,7 @@
 <script setup>
 import AppBar from '@/components/AppBar.vue';
 import Footer from '@/components/Footer.vue';
+import Table from '@/components/Table.vue';
 import TarjetaConImagen from '@/components/TarjetaConImagen.vue';
 import { ref } from 'vue';
 const url1 = ref('')
@@ -40,6 +53,7 @@ const ObtenerImagenes = async ()=>{
       const imgs = await fetch("https://picsum.photos/v2/list?page=1&limit=50");
       const imgsArray = await imgs.json()
       obtenerUrls(imgsArray)
+      error.value = false
     }catch(e){
        error.value = true
        cargando.value = false
