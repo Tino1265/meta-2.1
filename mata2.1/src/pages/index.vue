@@ -28,7 +28,7 @@
         Cambiar
     </v-btn>
   </div>
-  <div class=" max-w-7xl w-11/12 my-3 mx-auto">
+  <div class=" max-w-7xl w-full my-3 mx-auto">
     <Table/>
   </div>
   <Footer/>
