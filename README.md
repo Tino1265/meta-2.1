@@ -36,6 +36,7 @@ ejecutar npm install
 
 ejecutar npm run dev
 
+```text
 mata2.1/
 |── .vscode
 |── node_modules
